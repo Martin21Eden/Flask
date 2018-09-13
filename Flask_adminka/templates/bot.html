@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+        <article class="media content-section">
+          <div class="media-body">
+              <div>
+                  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('.start_bot', bot_id=bot.id)}}">Start</a>
+                  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('.stop_bot', bot_id=bot.id)}}">Stop</a>
+              </div>
+
+            <h2 class="article-title"> {{ bot.name }}</h2>
+            <p class="article-content">{{ bot.commands }}</p>
+              <p class="article-content">{{ bot.status }}</p>
+
+              <div>
+                  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('.update_bot', bot_id=bot.id)}}">Update</a>
+                  <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+              </div>
+          </div>
+        </article>
+            <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Bot?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form action="{{ url_for('.delete_bot', bot_id=bot.id) }}" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock content %}

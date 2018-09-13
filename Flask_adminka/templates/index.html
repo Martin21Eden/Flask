@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for bot in bots %}
+        <article class="media content-section">
+          <div>
+            <h2><a class="article-title" href="{{ url_for('.bot', bot_id=bot.id) }}">{{ bot.name }}</a></h2>
+            <p class="article-content">{{ bot.commands }}</p>
+              <p class="article-content">{{ bot.status }}</p>
+              <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('.start_bot1', bot_id=bot.id)}}">Start</a>
+
+          </div>
+
+        </article>
+    {% endfor %}
+{% endblock content %}
