@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>{{song.title}}</h1>
+  <small>Written by {{song.author}}</small>
+  <hr>
+  <div>
+    {{song.lyrics | safe}}
+  </div>
+{% endblock %}

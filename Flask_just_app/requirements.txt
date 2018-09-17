@@ -1,0 +1,6 @@
+passlib
+Flask
+psycopg2-binary
+SQLAlchemy
+Flask-WTF
+flask-login

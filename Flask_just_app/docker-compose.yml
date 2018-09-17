@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: "postgres"
+    env_file:
+      - env_file
+    ports:
+      - "5432:5432"
+  web:
+     env_file:
+       - env_file
+#     restart: always
+     build: .
+     ports:
+       - "5000:5000"
+     volumes:
+       - .:/code
+     depends_on:
+       - db
