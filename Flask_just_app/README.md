@@ -1,5 +1,3 @@
-This is a working example of a multi-container flask application with Postgres as the database fronted by the nginx reverse proxy. See my [blog post](http://www.ameyalokare.com/docker/2017/09/20/nginx-flask-postgres-docker-compose.html) for a detailed explanation.
-
 ## Usage
 
 1. Bootstrap the DB
