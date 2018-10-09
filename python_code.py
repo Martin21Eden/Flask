@@ -1,2 +1,3 @@
 print('python')
-'sdcdcs'
+print([z for z in range(1, 10)])
+
